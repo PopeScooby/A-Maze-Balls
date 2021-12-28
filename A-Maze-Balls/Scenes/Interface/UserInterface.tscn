@@ -1,0 +1,159 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/Some Time Later.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Textures/SoccerBall_UI.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=3]
+[ext_resource path="res://Textures/Flag_UI.jpg" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="UserInterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.5874
+margin_top = -1.33371
+margin_right = -1.5874
+margin_bottom = -1.33368
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Live_Image" type="TextureRect" parent="."]
+margin_left = 9.0
+margin_top = 8.0
+margin_right = 59.0
+margin_bottom = 58.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lives_X" type="Label" parent="."]
+margin_left = 67.1873
+margin_top = 23.9522
+margin_right = 83.1873
+margin_bottom = 53.9522
+custom_fonts/font = SubResource( 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lives_Count" type="Label" parent="."]
+margin_left = 84.0871
+margin_top = 8.0728
+margin_right = 118.087
+margin_bottom = 58.0728
+custom_fonts/font = SubResource( 2 )
+text = "3"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score_Count" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1175.0
+margin_top = -700.0
+margin_right = -17.9974
+margin_bottom = -660.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score_Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1062.0
+margin_top = -701.0
+margin_right = -114.997
+margin_bottom = -661.0
+custom_fonts/font = SubResource( 2 )
+text = "Score:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level_Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.41234
+margin_top = -38.2819
+margin_right = -1183.41
+margin_bottom = 1.71808
+custom_fonts/font = SubResource( 2 )
+text = "Level"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level_Number" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 106.588
+margin_top = -37.2819
+margin_right = -1086.41
+margin_bottom = 2.71808
+custom_fonts/font = SubResource( 2 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flag_Image" type="Sprite" parent="."]
+position = Vector2( 34.2663, 92.4138 )
+scale = Vector2( 0.299091, 0.30421 )
+texture = ExtResource( 4 )
+
+[node name="Flag_X" type="Label" parent="."]
+margin_left = 67.0
+margin_top = 84.4244
+margin_right = 84.5592
+margin_bottom = 114.424
+custom_fonts/font = SubResource( 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flag_Count" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 68.545
+margin_right = 103.559
+margin_bottom = 118.545
+custom_fonts/font = SubResource( 2 )
+text = "3"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

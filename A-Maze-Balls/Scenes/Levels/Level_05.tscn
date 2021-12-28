@@ -1,0 +1,340 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/Balls/Ball_Soccer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Mesh Libraries/Walls.tres" type="MeshLibrary" id=2]
+[ext_resource path="res://Scenes/Assets/Marker.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Assets/Goalpost.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Interface/UserInterface.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=7]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.0745098, 0.380392, 0.184314, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Start_Camera"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 10, 25 ), Vector3( 0, 35, 25 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -15, 0, 0 ), Vector3( -62.5, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Start_Camera_0"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 10, 25 ), Vector3( 0, 35, 25 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -15, 0, 0 ), Vector3( -62.5, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Start_Camera_1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 25, 10, 0 ), Vector3( 25, 35, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -15, 90, 0 ), Vector3( -62.5, 90, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Start_Camera_2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 10, -25 ), Vector3( 0, 35, -25 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -15, 180, 0 ), Vector3( -62.5, 180, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Start_Camera_3"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -25, 10, 0 ), Vector3( -25, 35, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -15, -90, 0 ), Vector3( -62.5, -90, 0 ) ]
+}
+
+[node name="Level" type="Spatial"]
+script = ExtResource( 6 )
+Checkpoints = 4
+
+[node name="UserInterface" parent="." instance=ExtResource( 5 )]
+anchor_left = 1.0
+anchor_top = 1.0
+margin_left = -1280.0
+margin_top = -720.0
+margin_right = 0.0
+margin_bottom = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Ball_Soccer" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -7.0417, 2, -2.98507 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1.62921e-07, 0.887011, -0.461749, 0, 0.461749, 0.887011, 1, 1.44512e-07, -7.52284e-08, -25, 35, 0 )
+current = true
+script = ExtResource( 7 )
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 2 )
+data = {
+"cells": PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, -1610612736, 3, 0, -1610612736, 4, 0, 0, 5, 0, 536870912, 6, 0, -1610612736, 7, 0, -1073741824, 8, 0, -1610612736, 9, 0, 0, 10, 0, 0, 14, 0, 0, 65521, 0, 0, 65530, 0, 536870912, 65534, 0, 536870912, 65535, 0, -1610612736, 14, 1, 0, 65521, 1, 0, 65530, 1, -1610612736, 65534, 1, 536870912, 14, 2, 0, 65521, 2, 0, 65522, 2, -1610612736, 65526, 2, -1610612736, 65530, 2, 0, 65534, 2, 0, 14, 3, 0, 65521, 3, 0, 65526, 3, -1610612736, 65530, 3, -1610612736, 65534, 3, 0, 2, 4, 536870912, 6, 4, 536870912, 10, 4, 0, 14, 4, 0, 65521, 4, 0, 65526, 4, 0, 65530, 4, -1610612736, 65534, 4, -1073741824, 2, 5, 0, 6, 5, -1610612736, 10, 5, 536870912, 14, 5, 0, 65521, 5, 0, 65526, 5, 536870912, 65530, 5, 0, 65534, 5, 0, 2, 6, 0, 14, 6, 0, 65521, 6, 0, 65525, 6, 536870912, 65526, 6, 536870912, 65530, 6, 0, 2, 7, 0, 14, 7, 0, 65521, 7, 0, 2, 8, 536870912, 14, 8, 0, 65521, 8, 0, 0, 9, 536870912, 1, 9, 536870912, 2, 9, 0, 6, 9, 536870912, 7, 9, 0, 8, 9, 536870912, 9, 9, -1610612736, 10, 9, -1610612736, 14, 9, 0, 65521, 9, 0, 65534, 9, -1610612736, 65535, 9, -1073741824, 2, 10, -1073741824, 10, 10, -1073741824, 14, 10, 0, 65521, 10, 0, 65525, 10, 536870912, 65526, 10, 0, 65527, 10, 0, 65528, 10, 0, 65529, 10, -1073741824, 65530, 10, 0, 14, 11, 0, 65521, 11, 0, 14, 12, 0, 65521, 12, 0, 6, 13, 0, 14, 13, 0, 65521, 13, 0, 65534, 13, 536870912, 0, 14, 0, 1, 14, 0, 2, 14, 0, 3, 14, 0, 4, 14, 0, 5, 14, 0, 6, 14, 0, 7, 14, 0, 8, 14, 0, 9, 14, 0, 10, 14, 0, 11, 14, 0, 12, 14, 0, 13, 14, 0, 14, 14, 0, 65521, 14, 0, 65522, 14, 0, 65523, 14, 0, 65524, 14, 0, 65525, 14, 0, 65526, 14, 0, 65527, 14, 0, 65528, 14, 0, 65529, 14, 0, 65530, 14, 0, 65531, 14, 536870912, 65532, 14, 0, 65533, 14, 0, 65534, 14, 0, 65535, 14, 0, 0, 65521, 0, 1, 65521, 0, 2, 65521, 0, 3, 65521, 0, 4, 65521, 0, 5, 65521, 0, 6, 65521, 0, 7, 65521, 0, 8, 65521, 0, 9, 65521, 0, 10, 65521, 0, 11, 65521, 0, 12, 65521, 0, 13, 65521, 0, 14, 65521, 0, 65521, 65521, 0, 65522, 65521, 0, 65523, 65521, 0, 65524, 65521, 0, 65525, 65521, 0, 65526, 65521, 0, 65527, 65521, 0, 65528, 65521, 0, 65529, 65521, 0, 65530, 65521, 0, 65531, 65521, 0, 65532, 65521, 0, 65533, 65521, 0, 65534, 65521, 0, 65535, 65521, 0, 14, 65522, 0, 65521, 65522, 0, 65530, 65522, -1610612736, 14, 65523, 0, 65521, 65523, 0, 65530, 65523, -1610612736, 14, 65524, 0, 65521, 65524, 0, 65524, 65524, 536870912, 65525, 65524, -1610612736, 65526, 65524, -1073741824, 65527, 65524, 536870912, 65530, 65524, -1610612736, 2, 65525, 0, 3, 65525, 536870912, 4, 65525, 536870912, 5, 65525, 0, 6, 65525, -1610612736, 10, 65525, 0, 14, 65525, 0, 65521, 65525, 0, 65525, 65525, 536870912, 65534, 65525, 0, 10, 65526, 0, 14, 65526, 0, 65521, 65526, 0, 65525, 65526, 536870912, 65534, 65526, -1073741824, 10, 65527, -1610612736, 14, 65527, 0, 65521, 65527, 0, 65525, 65527, 0, 65534, 65527, -1610612736, 0, 65528, 536870912, 1, 65528, 0, 2, 65528, 536870912, 6, 65528, -1610612736, 7, 65528, 536870912, 8, 65528, -1610612736, 9, 65528, 536870912, 10, 65528, 536870912, 14, 65528, 0, 65521, 65528, 0, 65525, 65528, 536870912, 65526, 65528, -1073741824, 65530, 65528, 536870912, 65534, 65528, 536870912, 65535, 65528, -1610612736, 14, 65529, 0, 65521, 65529, 0, 65530, 65529, -1610612736, 14, 65530, 0, 65521, 65530, 0, 65530, 65530, 0, 14, 65531, 0, 65521, 65531, 0, 65522, 65531, 536870912, 65530, 65531, 0, 0, 65532, -1610612736, 1, 65532, 0, 2, 65532, 0, 3, 65532, -1610612736, 4, 65532, 0, 5, 65532, 0, 6, 65532, -1073741824, 7, 65532, 536870912, 8, 65532, 536870912, 9, 65532, -1073741824, 10, 65532, -1610612736, 11, 65532, 536870912, 12, 65532, 0, 13, 65532, -1610612736, 14, 65532, 0, 65521, 65532, 0, 65526, 65532, 536870912, 65527, 65532, -1610612736, 65528, 65532, 0, 65529, 65532, -1610612736, 65530, 65532, 536870912, 65534, 65532, 536870912, 65535, 65532, -1073741824, 14, 65533, 0, 65521, 65533, 0, 65526, 65533, -1610612736, 14, 65534, 0, 65521, 65534, 0, 65525, 65534, -1073741824, 65526, 65534, 0, 14, 65535, 0, 65521, 65535, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.841511, 0.54024, 0, -0.54024, -0.841511, 0, 25, -50 )
+shadow_enabled = true
+
+[node name="Checkpoints" type="Spatial" parent="."]
+
+[node name="Goalpost" parent="Checkpoints" instance=ExtResource( 4 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 9, 1.654, -21 )
+
+[node name="Goalpost2" parent="Checkpoints" instance=ExtResource( 4 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -3, 1.654, 1 )
+
+[node name="Goalpost3" parent="Checkpoints" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.654, 5 )
+
+[node name="Goalpost4" parent="Checkpoints" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.654, 9 )
+
+[node name="Markers" type="Spatial" parent="."]
+
+[node name="Marker" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -15, 0, -11 )
+
+[node name="Marker2" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -25, 0, -13 )
+
+[node name="Marker3" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -20, 0, -26 )
+
+[node name="Marker4" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -15, 0, -19 )
+
+[node name="Marker5" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -11, 0, -3 )
+
+[node name="Marker6" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -7, 0, -7 )
+
+[node name="Marker7" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -7, 0, 1 )
+
+[node name="Marker8" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -3, 0, -3 )
+
+[node name="Marker9" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -15, 0, 1 )
+
+[node name="Marker10" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -25, 0, -3 )
+
+[node name="Marker11" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -23, 0, 5 )
+
+[node name="Marker12" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -25, 0, 17 )
+
+[node name="Marker13" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -15, 0, 17 )
+
+[node name="Marker14" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -11, 0, 25 )
+
+[node name="Marker15" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -7, 0, 20 )
+
+[node name="Marker16" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -3, 0, 23 )
+
+[node name="Marker17" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 1, 0, 15 )
+
+[node name="Marker18" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 9, 0, 9 )
+
+[node name="Marker19" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 5, 0, 5 )
+
+[node name="Marker20" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 9, 0, 23 )
+
+[node name="Marker21" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 17, 0, 23 )
+
+[node name="Marker22" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 25, 0, 25 )
+
+[node name="Marker23" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 17, 0, 15 )
+
+[node name="Marker24" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 17, 0, 5 )
+
+[node name="Marker25" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 25, 0, 5 )
+
+[node name="Marker26" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 25, 0, 15 )
+
+[node name="Marker27" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 25, 0, -3 )
+
+[node name="Marker28" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 11, 0, -3 )
+
+[node name="Marker29" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 9, 0, -18 )
+
+[node name="Marker30" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 1, 0, -18 )
+
+[node name="Marker31" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 17, 0, -18 )
+
+[node name="Marker32" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 1, 0, -25 )
+
+[node name="Marker33" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 9, 0, -25 )
+
+[node name="Marker34" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 17, 0, -25 )
+
+[node name="Marker35" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 25, 0, -25 )
+
+[node name="Marker36" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 25, 0, -11 )
+
+[node name="Marker37" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, 9, 0, -11 )
+
+[node name="Marker38" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -7, 0, -23 )
+
+[node name="Marker39" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -7, 0, -15 )
+
+[node name="Marker40" parent="Markers" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.232219, 0, 0, 0, 1, -25, 0, 25 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Start_Camera = SubResource( 4 )
+anims/Start_Camera_0 = SubResource( 5 )
+anims/Start_Camera_1 = SubResource( 6 )
+anims/Start_Camera_2 = SubResource( 7 )
+anims/Start_Camera_3 = SubResource( 8 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
